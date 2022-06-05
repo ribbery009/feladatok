@@ -3,7 +3,7 @@
 
 class task31 {
 
-    static boolean feladat(int[][] array) {
+    static boolean task(int[][] array) {
 
         boolean diff = false;
         int max = 0;
@@ -41,7 +41,7 @@ class task31 {
                 }
             }
 
-            
+
             if (isTarget) {
                  System.out.println("Row: " + poiRow);
                  System.out.println("Col: " + poiCol);
@@ -66,6 +66,6 @@ class task31 {
                 { 19, 4, 3, 4, 5, 19, 2, 3, 4, 5 },
                 { 1, 2, 1, 1, 1, 1, 1, 1, 3, 2 },
                 { 19, 4, 3, 4, 5, 19, 2, 3, 4, 5 }, };
-        System.out.println(feladat(arr));
+        System.out.println(task(arr));
     }
 }
