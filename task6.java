@@ -4,8 +4,13 @@
 class task6 {
 
     public static int task(int n) {
+        System.out.println("n: "+n);
         if (n <= 2)
             return n;
-        return task(n - 2) + task(n - 1);
+        return task(n - 1) + task(n - 2);
+    }
+
+    public static void main(String[] args) {
+        System.out.println(task(8));
     }
 }

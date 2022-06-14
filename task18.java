@@ -20,6 +20,14 @@ class task18 {
         chars.add('c');
         chars.add('d');
         chars.add('e');
+        chars.add('f');
+        chars.add('g');
+        chars.add('h');
+        chars.add('i');
+        chars.add('j');
+        chars.add('k');
+        chars.add('l');
+
 
         for (int i = 0; i < 5; i++) {
             int int_random = rand.nextInt(chars.size());

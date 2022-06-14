@@ -19,12 +19,44 @@ class task7 {
         return counter;
     }
 
+    static int task2(int n) {
+
+        if (n < 2) {
+            return n;
+        }
+        int result = 0;
+        int helper = n;
+    
+        do {
+            result = n;
+            n = n * helper;
+        } while (n < 567);
+
+        return result;
+    }
+
+
+    static int imiT(int num){
+        int result = 1;
+        while (result * num < 567) result *= num;
+        return result;
+    }
+
+    public static int laciT(int szam)
+    {
+        if (szam == 0 || szam == 1) return szam;
+        int hatvany = szam;
+        while (hatvany * szam < 567) hatvany *= szam;
+        return hatvany;
+    }
     public static void main(String[] args) {
-        
 
-        int num1 = task(8);
+        System.out.println("num1: " + task(8));
+        System.out.println("num2: " + task2(8));
 
-        System.out.println("num1: "+num1);
+
+        System.out.println("laci: " + laciT(8));
+        System.out.println("imi: " + imiT(8));
 
 
     }

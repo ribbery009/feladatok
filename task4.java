@@ -14,8 +14,11 @@ class Analize1 {
         return x[n];
     }
 
+  
     public static void main(String[] args) {
         double newNum = An1(4);
+
         System.out.println(newNum);
+
     }
 }
