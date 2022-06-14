@@ -2,10 +2,10 @@
 // szám-e, vagy sem! (pozitív osztóinak összege a szám kétszerese
 
 class isPerfectNumber {
-    public static void main(String args[]) {
-        long n = 5, sum = 0;
 
+    static boolean origiSolution(int n) {
         int i = 1;
+        int sum = 0;
         while (i <= n / 2) {
             if (n % i == 0) {
                 sum = sum + i;
@@ -13,9 +13,32 @@ class isPerfectNumber {
             i++;
         }
         if (sum == n) {
-            System.out.println(n + " is a perfect number.");
+            return true;
+        } else
+            return false;
+    }
+
+    static boolean lastSolution(int n) {
+        int sum = 0;
+        for (int i = 1; i <= n; i++) {
+            if (n % i == 0) {
+                sum = sum + i;
+            }
         }
-        else
-            System.out.println(n + " is not a perfect number.");
+        System.out.println(sum);
+        if (sum == (n * 2)) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public static void main(String args[]) {
+        int n = 6;
+        // origiSolution(n);
+
+        System.out.println(origiSolution(n));
+
+        System.out.println(lastSolution(n));
     }
 }
