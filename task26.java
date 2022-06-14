@@ -5,8 +5,16 @@
 
 class task26 {
 
-    static int task() {
+    static int task(int [] tomb,int szam) {
 
+        int min = 0, max = tomb.length-1;
+        while (min <= max)
+        {
+            int mid = min + (max - min) / 2;
+            if (tomb[mid] == szam) return mid;
+            if (tomb[mid] > szam) max = mid - 1;
+            else min = mid + 1;
+        }
         return -1;
     }
 
