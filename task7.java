@@ -16,7 +16,7 @@ class task7 {
             result = result * n;
         }
 
-        return counter;
+        return result;
     }
 
     static int task2(int n) {
@@ -31,6 +31,21 @@ class task7 {
             result = n;
             n = n * helper;
         } while (n < 567);
+
+        return result;
+    }
+
+    static int task3(int n) {
+
+       
+        int result = 0;
+        int helper = n;
+        int sum = n;
+    
+        do {
+            result = sum;
+            sum = sum * helper;
+        } while (sum < 567);
 
         return result;
     }
@@ -53,6 +68,8 @@ class task7 {
 
         System.out.println("num1: " + task(8));
         System.out.println("num2: " + task2(8));
+        System.out.println("num3: " + task3(8));
+
 
 
         System.out.println("laci: " + laciT(8));

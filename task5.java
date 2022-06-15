@@ -11,9 +11,22 @@ class Analize2 {
         return x[n];
     }
 
+    static double task2(double szam) {
+        int n = 50;
+        double[] x = new double[n + 1];
+        x[1] = 1;
+        for (int k = 1; k < n; k++)
+            x[k + 1] = 3 / ((2*x[(int) (k+szam)])/(x[k]*x[k]));
+        return x[n];
+    }
+
     public static void main(String[] args) {
         double newNum = task(9);
+        double newNum2 = task2(9);
+
         System.out.println(newNum);
+        System.out.println(newNum2);
+
     }
 
 }

@@ -7,5 +7,7 @@ class task9 {
     {
         return (szam / 2) % 2;
     }
-
+public static void main(String[] args) {
+    System.out.println(task(8));
+}
 }
