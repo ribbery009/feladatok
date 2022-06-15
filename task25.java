@@ -17,7 +17,22 @@ class task25 {
         return -1;
     }
 
+    static int task2(String s, char c, int n) {
+
+        int counter = 0;
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == c) {
+                counter++;
+            }
+            if (counter == n)
+            return i;
+        }
+        return -1;
+    }
+
     public static void main(String[] args) {
         System.out.println(task("almamater", 'a', 3));
+        System.out.println(task2("almamater", 'a', 3));
+
     }
 }

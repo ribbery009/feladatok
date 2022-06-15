@@ -21,7 +21,26 @@ class task16 {
         System.out.println(count);
     }
 
+    static void task2(String szo) {
+        String str = "hello  alma yes alma hello alma az alma.";
+
+        int lastIndex = 0;
+        int count = 0;
+
+        while (lastIndex != -1) {
+
+            lastIndex = str.indexOf(szo, lastIndex);
+            System.out.println("lastIndex:"+lastIndex);
+            if (lastIndex > 0) {
+                count++;
+                lastIndex += szo.length();
+            }
+        }
+        System.out.println(count);
+    }
     public static void main(String[] args) {
         task("alma");
+        task2("alma");
+
     }
 }
