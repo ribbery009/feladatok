@@ -12,7 +12,7 @@ class task18 {
 
     static void task() {
         Random rand = new Random();
-        String word="";
+        String word = "";
         ArrayList<Character> chars = new ArrayList<Character>();
 
         chars.add('a');
@@ -28,17 +28,46 @@ class task18 {
         chars.add('k');
         chars.add('l');
 
-
         for (int i = 0; i < 5; i++) {
             int int_random = rand.nextInt(chars.size());
             word += chars.get(int_random);
             chars.remove(int_random);
         }
 
-        System.out.println("word: "+word);
+        System.out.println("word: " + word);
+    }
+
+    static void task2() {
+        Random rand = new Random();
+   
+        ArrayList<Character> chars = new ArrayList<Character>();
+
+        char start = 'a';
+        char end = 'z';
+        int startNum = (int) start;
+        int endNum = (int) end;
+
+        for (int i = startNum; i <= endNum; i++) {
+            chars.add(start);
+            startNum = startNum + 1;
+            start = (char) startNum;
+        }
+
+        int n = 0;
+        String newWord = "";
+
+        while (n < 5) {
+            int randNum = rand.nextInt(chars.size());
+            newWord = newWord + chars.get(randNum);
+            chars.remove(randNum);
+            n++;
+        }
+
+        System.out.println("word: " + newWord);
     }
 
     public static void main(String[] args) {
         task();
+        task2();
     }
 }

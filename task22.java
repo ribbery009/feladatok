@@ -36,9 +36,41 @@ class task22 {
         return false;
     }
 
+    static boolean task2(int[] arr) {
+
+        int max = 0;
+        boolean isHigher = false;
+        int count = 0;
+        int num = 0;
+
+        for (int i = 0; i < arr.length; i++) {
+
+            count = 0;
+            for (int j = 0; j < arr.length; j++) {
+                if (arr[i] == arr[j]) {
+                    count++;
+                }
+            }
+
+            if (count == max && num !=arr[i]) {
+                System.out.println("arri: " + arr[i]);
+                isHigher = false;
+            }
+            if (count > max) {
+                num = arr[i];
+                isHigher = true;
+                max = count;
+            }
+        }
+
+        return isHigher;
+    }
+
     public static void main(String[] args) {
-        int[] arr = new int[] { 2, 3, 4, 4 };
+        int[] arr = new int[] { 2, 1, 4, 0 };
 
         System.out.println(task(arr));
+        System.out.println(task2(arr));
+
     }
 }

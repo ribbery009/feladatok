@@ -18,9 +18,23 @@ class task13 {
         return true;
     }
 
+    static boolean task2(String word) {
+
+        int size = word.length()-1;
+
+        for (int i = 0; i < word.length(); i++) {
+     
+                if (word.charAt(i) != word.charAt(size)) {
+                    return false;
+                }
+                size--;
+        }
+
+        return true;
+    }
     public static void main(String[] args) {
 
-        if (task("asdfffsa")) {
+        if (task2("asddsa")) {
             System.out.println("Palindroma!!");
         } else {
             System.out.println("Nem Palindroma!");

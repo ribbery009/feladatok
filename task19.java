@@ -16,7 +16,18 @@ string = sb.toString();
 System.out.println(string);
 }
 
+static void task2(){
+    Random rand = new Random();
+    String string = "almaq";
+    int randNum = rand.nextInt(string.length());
+    StringBuilder sb = new StringBuilder(string);
+    sb.insert(randNum, 'a');
+    string = sb.toString();
+    System.out.println(string);
+    }
+
 public static void main(String[] args) {
     task();
+    task2();
 }
 }

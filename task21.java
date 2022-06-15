@@ -13,13 +13,32 @@ class task21 {
                     helper = true;
             }
             if(!helper)
-            System.out.println("Van olyan szám! A szám: " + arr[i]);
+            System.out.println("Van olyan szám! Task1 A szám: " + arr[i]);
         }
+    }
+
+    static boolean task2(int[] arr) {
+
+        boolean helper = true;
+        for (int i = 0; i < arr.length; i++) {
+            helper = true;
+            for (int j = 0; j < arr.length; j++) {
+                if (arr[j] % arr[i] != 0)
+                    helper = false;
+            }
+            if(helper){
+                System.out.println("Van olyan szám! Task2 A szám: " + arr[i]);
+                return true;
+            }
+            
+        }
+        return false;
     }
 
     public static void main(String[] args) {
 
-        int[] arr = new int[] { 2, 4, 6, 8, 10 };
+        int[] arr = new int[] { 18, 4, 2, 8, 10 };
         task(arr);
+        task2(arr);
     }
 }
