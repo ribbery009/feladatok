@@ -23,17 +23,23 @@ class task26 {
         int min = 0, max = tomb.length-1;
         while (min <= max)
         {
-            int mid =  (max + min) / 2;
+            int mid =  min + (max - min) / 2;
+            System.out.println("mid: "+mid);
             if (tomb[mid] == szam) return mid;
-            if (tomb[mid] > szam) max --;
-            else min++;
+            if (tomb[mid] > szam) {max = mid -1;
+                System.out.println("max: "+max);
+            }
+            else{
+                min= mid + 1;
+                System.out.println("min: "+min);
+            } 
         }
         return -1;
     }
 
     public static void main(String[] args) {
         int [] tomb = new int[]{21,22,23,24,25,26,27,28,29,30};
-        System.out.println(task(tomb,27));
+        // System.out.println(task(tomb,27));
         System.out.println(task2(tomb,27));
     }
 

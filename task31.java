@@ -9,33 +9,33 @@ class task31 {
         int max = 0;
         int min = 0;
 
-        int poiRow = 0;
-        int poiCol = 0;
+        int poix = 0;
+        int poij = 0;
 
         boolean isTarget = false;
 
         for (int i = 0; i < 10; i++) {
             max = 0;
             min = 0;
-            poiRow = 0;
-            poiCol = 0;
+            poix = 0;
+            poij = 0;
             isTarget = true;
 
 
             //max keresés 
-            for (int col = 0; col < 10; col++) {
-                if (array[i][col] > max) {
-                    max = array[i][col];
-                    poiRow = col;
-                    poiCol = i;
+            for (int j = 0; j < 10; j++) {
+                if (array[i][j] > max) {
+                    max = array[i][j];
+                    poix = j;
+                    poij = i;
                 }
             }
 
-            min = array[i][poiRow];
-            for (int row = 0; row < 10; row++) {
+            min = array[i][poix];
+            for (int x = 0; x < 10; x++) {
 
                 //ha van kisebb elem az oszlopában, léptet
-                if (array[row][poiRow] < min) {
+                if (array[x][poix] < min) {
                     isTarget = false;
                     break;
                 }
@@ -43,9 +43,54 @@ class task31 {
 
 
             if (isTarget) {
-                 System.out.println("Row: " + poiRow);
-                 System.out.println("Col: " + poiCol);
+                 System.out.println("x: " + poix);
+                 System.out.println("j: " + poij);
 
+                return true;
+
+            }
+        }
+        return false;
+    }
+
+    static boolean task2(int[][] array) {
+
+        boolean diff = false;
+        int max = 0;
+        int min =0;
+
+        int maxIndex = 0;
+
+   
+
+        for (int i = 0; i < 10; i++) {
+            max = 0;
+            
+
+            for (int j = 0; j < 10; j++) {
+                if (array[i][j] == max) {
+                    diff = false;
+                }
+                if (array[i][j] > max) {
+                    max = array[i][j];
+                    min = array[i][j];
+                    maxIndex = j;
+                    diff = true;
+                }
+            }
+
+            for (int x = 0; x < 10; x++) {
+
+                if (array[x][max] <= min && i !=x ) {
+                    diff = false;
+                }
+            }
+
+
+            if (diff) {
+
+                System.out.println("x: " + i);
+                System.out.println("j: " + max);
                 return true;
 
             }
@@ -56,16 +101,18 @@ class task31 {
     public static void main(String[] args) {
 
         int[][] arr = new int[][] {
-                { 6, 12, 8, 9, 10, 19, 2, 3, 4, 5 },
-                { 9, 3, 1, 1, 1, 1, 1, 1, 4, 2 },
-                { 5, 4, 13, 4, 5, 19, 2, 3, 4, 5 },
-                { 6, 7, 5, 14, 3, 19, 2, 3, 4, 5 },
-                { 5, 4, 1, 1, 1, 1, 1, 1, 4, 5 },
-                { 19, 4, 3, 4, 5, 19, 2, 3, 4, 5 },
-                { 6, 4, 1, 1, 1, 1, 1, 1, 4, 5 },
-                { 19, 4, 3, 4, 5, 19, 2, 3, 4, 5 },
-                { 1, 2, 1, 1, 1, 1, 1, 1, 3, 2 },
-                { 19, 4, 3, 4, 5, 19, 2, 3, 4, 5 }, };
+                { 1,1,2,1,1,1,1,1,1,1 },
+                { 1,1,3,1,1,1,3,1,1,1 },
+                { 1,1,3,1,1,1,1,1,1,1 },
+                { 1,1,3,1,1,1,1,1,1,1 },
+                { 1,1,3,1,1,1,1,1,1,1 },
+                { 1,1,3,1,1,1,1,1,1,1 },
+                { 1,1,3,1,1,1,1,1,1,1 },
+                { 1,1,3,1,1,1,1,1,1,1 },
+                { 1,1,3,1,1,1,1,1,1,1 },
+                { 1,1,3,1,1,1,1,1,1,1 }};
         System.out.println(task(arr));
+        System.out.println(task2(arr));
+
     }
 }

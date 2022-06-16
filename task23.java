@@ -30,34 +30,29 @@ class task23 {
     static int task2(int[] arr) {
 
         int counter = 0;
-        int first = arr[0];
-        int maxIndex = 0;
+        int legkisebb = 0;
         int maxNum = 0;
 
-        for (int i = 1; i < arr.length; i++) {
-            if (arr[i] <= first) {
-                System.out.println("arri: "+arr[i]);
-                System.out.println("first: "+first);
-
-                first = arr[i];
-                counter = 0;
-            } else {
+        for (int i = 0; i < arr.length; i++) {
+            if (i < arr.length - 1 && arr[i + 1] > arr[i]) {
                 counter++;
+            }else{
+                counter = 0;
             }
-            if(maxNum<=counter){
-
-                System.out.println("i: "+i);
+            if (counter >= maxNum) {
                 maxNum = counter;
-                maxIndex = i;
+                legkisebb = (i + 1) - maxNum;
             }
         }
 
-        return maxIndex-maxNum;
+        return legkisebb;
     }
+
+ 
 
     public static void main(String[] args) {
 
-        int[] arr = new int[] { 1, 2, 1, 2, 5, 6, 7, 1, 2, 3, 4, 5, 6, 7, 8 };
+        int[] arr = new int[] { 1, 2, 1, 2, 5, 6, 7, 6, 2, 1, 4, 5, 6, 7, 8 };
         System.out.println(task(arr));
         System.out.println(task2(arr));
 

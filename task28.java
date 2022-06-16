@@ -22,6 +22,24 @@ class task28 {
         return false;
     }
 
+    static boolean task2(char[][] arr) {
+
+        for (int k = 0; k < arr.length; k++) {
+
+            for (int i = 0; i < arr.length; i++) {
+
+                for (int j = 0; j < arr.length; j++) {
+                    if (arr[k][k] == arr[i][j] && j!=i) {
+                        return true;
+                    }
+                }
+            }
+
+        }
+
+        return false;
+    }
+
     public static void main(String[] args) {
         char[][] arr = new char[][] { 
                 { 19, 2, 3, 4, 5 },
@@ -30,5 +48,7 @@ class task28 {
                 { 6, 7, 5, 14, 3 },
                 { 6, 7, 5, 4, 15 } };
         System.out.println(task(arr));
+        System.out.println(task2(arr));
+
     }
 }
